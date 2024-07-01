@@ -9,8 +9,7 @@ interface indicators {
 }
 
 const Home: FC = () => {
-  
-  const [totalClicks, setTotalClicks] = useState(500);
+  const totalClicks = 500;
   const [remainsClick, setRemainsClick] = useState(500);
   const [currentClick, setCurrentClick] = useState(0);
   const [income, setIncome] = useState(0);
@@ -24,11 +23,11 @@ const Home: FC = () => {
     }
   }
 
-  // const innitData = useInitData();
+  const innitData = useInitData();
 
-  // useEffect(() => {
-  //   setUser(innitData?.user?.id || 0);
-  // }, []);
+  useEffect(() => {
+    setUser(innitData?.user?.id || 0);
+  }, []);
 
   const clicked = useCallback(() => {
     if (remainsClick <= 0) {
